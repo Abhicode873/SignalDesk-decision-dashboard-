@@ -1,0 +1,13 @@
+build/
+cmake-build-*/
+*.exe
+*.o
+*.obj
+*.dll
+*.so
+*.dylib
+signals.csv
+signal_report.txt
+.vscode/.cmake/
+.DS_Store
+Thumbs.db
