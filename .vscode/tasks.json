@@ -1,0 +1,46 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "SignalDesk: Configure",
+      "type": "shell",
+      "command": "cmake",
+      "args": [
+        "-S",
+        ".",
+        "-B",
+        "build"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "SignalDesk: Build",
+      "type": "shell",
+      "command": "cmake",
+      "args": [
+        "--build",
+        "build",
+        "--config",
+        "Release"
+      ],
+      "group": "build",
+      "problemMatcher": [
+        "$gcc"
+      ],
+      "dependsOn": "SignalDesk: Configure"
+    },
+    {
+      "label": "SignalDesk: Run Demo",
+      "type": "shell",
+      "command": "./build/signaldesk",
+      "windows": {
+        "command": ".\\build\\Release\\signaldesk.exe"
+      },
+      "args": [
+        "--demo"
+      ],
+      "dependsOn": "SignalDesk: Build",
+      "problemMatcher": []
+    }
+  ]
+}
